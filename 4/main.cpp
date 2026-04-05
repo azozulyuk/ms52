@@ -38,17 +38,17 @@ int main() {
         return 1;
     }
 
-    Menu m("Seneca Restaurant", "End Program", -1);
+    Menu m("Seneca Restaurant", "End Program", 0);
     m << "Order"
         << "Print Bill"
         << "Start a New Bill"
         << "List Foods"
         << "List Drinks";
 
-    Menu o("Order Menu", "Back to main menu", -1);
+    Menu o("Order Menu", "Back to main menu", 3);
     o << "Food" << "Drink";
 
-    Menu c("You have bills that are not saved. Are you sure you want to exit?", "No", -1);
+    Menu c("You have bills that are not saved. Are you sure you want to exit?", "No", 0);
     c << "Yes";
 
     int doneNow = 0;
