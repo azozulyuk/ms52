@@ -22,7 +22,6 @@ I have done all the coding by myself and only copied the code
 that my professor provided to complete my work for function main,ect.
 -----------------------------------------------------------
 */
-
 #include <iostream>
 #include "Menu.h"
 #include "Ordering.h"
@@ -83,8 +82,7 @@ int main() {
 
         case 0:
             if (ord.hasUnsavedBill()) {
-
-                Menu confirm("You have bills that are not saved. Are you sure you want to exit?", "No", 0);
+                Menu confirm("You have bills that are not saved, are you sue you want to exit?", "No", 0);
                 confirm << "Yes";
 
                 int check = confirm.run();
