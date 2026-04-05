@@ -173,13 +173,20 @@ namespace seneca {
         }
     }
     void Ordering::orderDrink() {
-        Menu menu("Drink Menu", "Back to Order", 2);
-        for (unsigned int i = 0; i < m_counter_drink; i++) {
-            menu << m_drinks[i].name();
-        }
-        int choice = menu.run();
-        if (choice != 0) {
-            Billable* item = m_drinks[choice - 1].clone();
+
+        int popChoice = -1;
+
+        while (popChoice != 0) {
+
+            Menu drinkMenu("Drink Menu", "Back to Order", 3);
+            drinkMenu << "Pepsi" << "Orange Juice" << "Coffee";
+
+            popChoice = drinkMenu.run();
+
+            if (popChoice == 0) break;
+
+            Billable* item = m_drinks[popChoice - 1].clone();
+
             if (item->order()) {
                 m_billItems[m_counter_billable] = item;
                 m_counter_billable++;
