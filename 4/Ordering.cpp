@@ -183,29 +183,25 @@ namespace seneca {
         }
     }
 
-    void Ordering::orderDrink() {
-        int popChoice = -1;
+  void Ordering::orderDrink() {
 
-        while (popChoice != 0) {
+    Menu drinkMenu("Drink Menu", "Back to Order", 6);
+    drinkMenu << "Pepsi" << "Orange Juice" << "Coffee";
 
-            Menu drinkMenu("Drink Menu", "Back to Order", 6);
-            drinkMenu << "Pepsi" << "Orange Juice" << "Coffee";
+    int popChoice = drinkMenu.run();
 
-            popChoice = drinkMenu.run();
+    if (popChoice != 0) {
 
-            if (popChoice == 0) break;
+        Billable* item = m_drinks[popChoice - 1].clone();
 
-            Billable* item = m_drinks[popChoice - 1].clone();
-
-            if (item->order()) {
-                m_billItems[m_counter_billable++] = item;
-                m_hasBill = true;
-            }
-            else {
-                delete item;
-            }
+        if (item->order()) {
+            m_billItems[m_counter_billable++] = item;
+            m_hasBill = true;
+        } else {
+            delete item;
         }
     }
+}
 
     void Ordering::printBill(ostream& os) const {
         double total = 0.0;
