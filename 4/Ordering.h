@@ -21,7 +21,6 @@ I have done all the coding by myself and only copied the code
 that my professor provided to complete my work for function main,ect.
 -----------------------------------------------------------
 */
-
 #ifndef SENECA_ORDERING_H
 #define SENECA_ORDERING_H
 #include <iostream>
@@ -41,7 +40,7 @@ namespace seneca {
 
 		Food* m_foods;    
 		Drink* m_drinks;
-
+		bool m_hasBill;
 
 		Billable* m_billItems[MaximumNumberOfBillItems];
 
