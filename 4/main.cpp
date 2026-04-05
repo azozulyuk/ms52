@@ -58,11 +58,20 @@ int main() {
         switch (newchoice) {
 
         case 1: {
-            int option = o.run();
-            if (option == 1) ord.orderFood();
-            else if (option == 2) ord.orderDrink();
-            break;
+    int option = -1;
+
+    while (option != 0) {
+        option = o.run();
+
+        if (option == 1) {
+            ord.orderFood();
         }
+        else if (option == 2) {
+            ord.orderDrink();
+        }
+    }
+    break;
+}
 
         case 2:
             ord.printBill(cout);
