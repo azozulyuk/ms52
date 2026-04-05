@@ -44,8 +44,7 @@ namespace seneca {
         int choice;
 
         for (int i = 0; i < m_indent; i++) cout << ' ';
-        cout << m_title << endl;
-
+        cout << m_title << " " << endl;
         for (int i = 0; i < m_count; i++) {
             for (int j = 0; j < m_indent + 1; j++) cout << ' ';
             cout << (i + 1) << "- " << m_items[i] << endl;
