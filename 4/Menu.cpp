@@ -55,6 +55,11 @@ namespace seneca {
         cout << "> ";
 
         cin >> choice;
+        while (!cin) {
+            cin.clear();
+            cin.ignore(1000, '\n');
+            cin >> choice;
+        }
         return choice;
     }
 }
